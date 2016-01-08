@@ -2,8 +2,12 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/argparcer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/TaskManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/TaskManager.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/threads/tmain.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/WorkerThread.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/WorkerThread.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/processes/pmain.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>
