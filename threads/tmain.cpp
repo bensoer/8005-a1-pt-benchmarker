@@ -28,7 +28,22 @@ int main(int argc, char * argv[]) {
         cout << "Parameter Found" << endl;
     }
 
+    //setup the task manager and generate all initial tasks
     TaskManager myTasks;
+
+    cout << "Loading Original Tasks" << endl;
+    //find all numbers from 1 to n
+    for(unsigned int i = 0; i < number; i++){
+        Task * task = new Task();
+        cout << "Number: " << number << " Digit: " << i << endl;
+        mpz_set_ui(task->n, number);
+        mpz_set_ui(task->d, i);
+
+        gmp_printf("%Zd\n",task->n);
+        gmp_printf("%Zd\n",task->d);
+
+        myTasks.addTask(*task);
+    }
 
     WorkerThread * wt1 = new WorkerThread(&myTasks);
     WorkerThread * wt2 = new WorkerThread(&myTasks);

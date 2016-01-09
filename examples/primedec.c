@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <gmp.h>
-#include "primedecompose.h"
+#include "./primedecompose.h"
 
 // uses the GMP (GNU Multiple Precision Library for the computations
 //gcc -Wall -o pdec primedec.c primedecompose.c -lgmp

@@ -1,4 +1,6 @@
 #include "primedecompose.h"
+#include "stdio.h"
+
  
 int decompose (mpz_t n, mpz_t *o) 
 {
@@ -12,10 +14,11 @@ int decompose (mpz_t n, mpz_t *o)
 	{
     		mpz_set_ui(d, 1);
     		do 
-		{
+			{
       			mpz_add_ui(tmp, d, 1);
       			mpz_swap(tmp, d);
     		} while(!mpz_divisible_p(n, d));
+
     		mpz_divexact(tmp, n, d);
     		mpz_swap(tmp, n);
     		mpz_init(o[i]);
