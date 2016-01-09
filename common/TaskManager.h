@@ -8,6 +8,7 @@
 #include <string>
 #include <mutex>
 #include <queue>
+#include "Task.h"
 
 using namespace std;
 
@@ -15,12 +16,12 @@ class TaskManager{
 
 private:
 
-    queue<string> tasks;
+    queue<Task> tasks;
     mutex mu;
 
 public:
-    void addTask(string task);
-    string getTask();
+    void addTask(Task task);
+    Task getTask();
 
 };
 

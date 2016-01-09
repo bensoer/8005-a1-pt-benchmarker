@@ -4,21 +4,24 @@
 
 #include "TaskManager.h"
 
-void TaskManager::addTask(string task) {
+void TaskManager::addTask(Task task) {
 
     this->mu.lock();
     this->tasks.push(task);
     this->mu.unlock();
 }
 
-string TaskManager::getTask() {
+Task TaskManager::getTask() {
     this->mu.lock();
+
 
     if(this->tasks.empty()){
         this->mu.unlock();
-        return "";
+        Task invalid;
+        invalid.valid = false;
+        return invalid;
     }
-    string task = tasks.front();
+    Task task = tasks.front();
     this->tasks.pop();
     this->mu.unlock();
     return task;

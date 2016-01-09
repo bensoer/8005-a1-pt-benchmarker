@@ -17,6 +17,11 @@ private:
 
     void checkForMoreWork();
 
+
+    bool idle = false;
+    TaskManager * tasks;
+    Task currentTask;
+
 };
 
 
