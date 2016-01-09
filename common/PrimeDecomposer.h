@@ -1,0 +1,14 @@
+//
+// Created by bensoer on 08/01/16.
+//
+
+#ifndef INC_8005_A1_PT_BENCHMARKER_PRIMEDECOMPOSER_H
+#define INC_8005_A1_PT_BENCHMARKER_PRIMEDECOMPOSER_H
+
+
+class PrimeDecomposer {
+
+};
+
+
+#endif //INC_8005_A1_PT_BENCHMARKER_PRIMEDECOMPOSER_H
