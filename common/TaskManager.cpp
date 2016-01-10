@@ -6,23 +6,23 @@
 
 void TaskManager::addTask(Task task) {
 
-    this->mu.lock();
+    //this->mu.lock();
+    pthread_mutex_lock(&this->mu);
     this->tasks.push(task);
-    this->mu.unlock();
+    pthread_mutex_unlock(&this->mu);
 }
 
 Task TaskManager::getTask() {
-    this->mu.lock();
-
+    pthread_mutex_lock(&this->mu);
 
     if(this->tasks.empty()){
-        this->mu.unlock();
+        pthread_mutex_unlock(&this->mu);
         Task invalid;
         invalid.valid = false;
         return invalid;
     }
     Task task = tasks.front();
     this->tasks.pop();
-    this->mu.unlock();
+    pthread_mutex_unlock(&this->mu);
     return task;
 }

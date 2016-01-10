@@ -35,12 +35,12 @@ int main(int argc, char * argv[]) {
     //find all numbers from 1 to n
     for(unsigned int i = 0; i < number; i++){
         Task * task = new Task();
-        cout << "Number: " << number << " Digit: " << i << endl;
+        //cout << "Number: " << number << " Digit: " << i << endl;
         mpz_set_ui(task->n, number);
         mpz_set_ui(task->d, i);
 
-        gmp_printf("%Zd\n",task->n);
-        gmp_printf("%Zd\n",task->d);
+        //gmp_printf("%Zd\n",task->n);
+        //gmp_printf("%Zd\n",task->d);
 
         myTasks.addTask(*task);
     }
@@ -62,6 +62,29 @@ int main(int argc, char * argv[]) {
     pthread_create(&t3,NULL, &bootstrapper, wt3);
     pthread_create(&t4,NULL, &bootstrapper, wt4);
     pthread_create(&t5,NULL, &bootstrapper, wt5);
+
+    struct timespec waitTime;
+    waitTime.tv_nsec = 1000 * 2;
+    waitTime.tv_sec = 3;
+
+    while(1){
+        if(wt1->isIdle() && wt2->isIdle() && wt3->isIdle() && wt4->isIdle() && wt5->isIdle()){
+            cout << "All Are Idle. Processing Complete" << endl;
+            wt1->stop();
+            wt2->stop();
+            wt3->stop();
+            wt4->stop();
+            wt5->stop();
+
+            break;
+        }else{
+            cout << "Something Is Still Running. Waiting" <<endl;
+            int result = nanosleep(&waitTime, NULL);
+            if(result != 0){
+                cout << pthread_self() << " ERROR. Sleep Failure" << endl;
+            }
+        }
+    }
 
     pthread_join(t1, NULL);
     pthread_join(t2, NULL);

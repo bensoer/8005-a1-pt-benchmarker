@@ -6,8 +6,8 @@
 #define INC_8005_A1_PT_BENCHMARKER_TASKS_H
 
 #include <string>
-#include <mutex>
 #include <queue>
+#include <pthread.h>
 #include "Task.h"
 
 using namespace std;
@@ -17,7 +17,7 @@ class TaskManager{
 private:
 
     queue<Task> tasks;
-    mutex mu;
+    pthread_mutex_t mu = PTHREAD_MUTEX_INITIALIZER;
 
 public:
     void addTask(Task task);

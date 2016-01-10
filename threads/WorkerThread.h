@@ -13,12 +13,15 @@ class WorkerThread {
 public:
     WorkerThread(TaskManager * taskManager);
     void start();
+    bool isIdle();
+    void stop();
 private:
 
     void checkForMoreWork();
 
 
     bool idle = false;
+    bool continueRunning = true;
     TaskManager * tasks;
     Task currentTask;
 
