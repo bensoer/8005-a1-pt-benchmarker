@@ -1,0 +1,14 @@
+//
+// Created by bensoer on 09/01/16.
+//
+
+#ifndef INC_8005_A1_PT_BENCHMARKER_WORKERPROCESS_H
+#define INC_8005_A1_PT_BENCHMARKER_WORKERPROCESS_H
+
+
+class WorkerProcess {
+
+};
+
+
+#endif //INC_8005_A1_PT_BENCHMARKER_WORKERPROCESS_H
