@@ -6,6 +6,7 @@ included though it can be compiled from there aswell.
 
 #Setup
 To setup:
+
 1. Clone the repo with CLion
 2. Select Run > Run. You will be prompted with 2 build options
     1. 8005-a1-pt-benchmarker will build the benchmarker to test threads on your system
