@@ -105,6 +105,8 @@ int main(int argc, char *argv[]){
              WorkerProcess * worker = new WorkerProcess(pipeConnectionToChild, pipeConnectionToParent, i);
              worker->start();
 
+             delete(worker);
+
              cout << "About to Return in Child" << endl;
              //isolate the child process from the parent so that it never runs parent content
              return 0;
@@ -120,7 +122,6 @@ int main(int argc, char *argv[]){
     //Child state holds state of child whether it is idle or not. 1 means it is idle, 0 means it is not
     int childrenstate[5] = {0};
     bool validRead = false;
-    bool hadSecondChance = false;
 
     while(1){
 
