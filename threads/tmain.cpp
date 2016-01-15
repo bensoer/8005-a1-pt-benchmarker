@@ -6,6 +6,7 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <vector>
+#include <sys/time.h>
 
 using namespace std;
 
@@ -58,6 +59,9 @@ int main(int argc, char * argv[]) {
     pthread_t t4;
     pthread_t t5;
 
+    struct timeval primeTime;
+    gettimeofday(&primeTime,NULL);
+
     pthread_create(&t1,NULL, &bootstrapper, wt1);
     pthread_create(&t2,NULL, &bootstrapper, wt2);
     pthread_create(&t3,NULL, &bootstrapper, wt3);
@@ -97,7 +101,8 @@ int main(int argc, char * argv[]) {
 
 
     for(unsigned int i = 0; i < primeTimes.size(); i++){
-        string message = "Prime Number factor found in: " + to_string(primeTimes.at(i)) + "ms";
+        long difference = primeTimes.at(i) - primeTime.tv_usec;
+        string message = "Prime Number factor found in: " + to_string(difference) + "ms";
         Logger::logToFile(message);
     }
 
