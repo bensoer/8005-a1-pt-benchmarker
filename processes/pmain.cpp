@@ -162,7 +162,7 @@ int main(int argc, char *argv[]){
                 long primeTime = stoi(status);
                 long timeDifference = primeTime - initiationTime.tv_usec;
 
-                string message = "Prime Number Found In " + to_string(timeDifference) + "ms";
+                string message = "Prime Number Found In " + to_string(timeDifference) + "microsec";
                 Logger::logToFile(message);
             }else{
                 intIndex = stoi(index2, nullptr, 10);

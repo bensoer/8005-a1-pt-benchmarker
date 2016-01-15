@@ -102,7 +102,7 @@ int main(int argc, char * argv[]) {
 
     for(unsigned int i = 0; i < primeTimes.size(); i++){
         long difference = primeTimes.at(i) - primeTime.tv_usec;
-        string message = "Prime Number factor found in: " + to_string(difference) + "ms";
+        string message = "Prime Number factor found in: " + to_string(difference) + "microssec";
         Logger::logToFile(message);
     }
 

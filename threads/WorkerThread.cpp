@@ -116,10 +116,10 @@ void WorkerThread::start() {
 
         gettimeofday(&endTime,NULL);
 
-        long timeDifference = endTime.tv_usec - startTime.tv_usec;
+        long timeDifference = endTime.tv_usec - startTime.tv_usec ;
         long threadid = pthread_self();
 
-        string message = to_string(threadid) + " has completed calculations in " + to_string(timeDifference) + "ms";
+        string message = to_string(threadid) + " has completed calculations in " + to_string(timeDifference) + "microsec";
         Logger::logToFile(message);
 
     }
