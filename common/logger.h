@@ -14,7 +14,6 @@ class Logger {
 private:
    // static pthread_mutex_t mu = PTHREAD_MUTEX_INITIALIZER;
 public:
-    static void log(string message);
 
     static void logToFile(string message);
     static void logToConsole(string message);

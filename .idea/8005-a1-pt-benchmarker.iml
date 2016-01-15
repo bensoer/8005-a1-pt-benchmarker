@@ -9,7 +9,9 @@
       <sourceFolder url="file://$MODULE_DIR$/common/TaskManager.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/common/logger.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/common/Task.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processes/WorkerProcess.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/processes/pmain.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processes/WorkerProcess.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/threads/tmain.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/threads/WorkerThread.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/threads/WorkerThread.h" isTestSource="false" />

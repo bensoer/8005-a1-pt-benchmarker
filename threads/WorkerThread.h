@@ -11,13 +11,18 @@
 class WorkerThread {
 
 public:
-    WorkerThread(TaskManager * taskManager);
+    WorkerThread(TaskManager * taskManager, vector<long> * primeTimes);
     void start();
     bool isIdle();
     void stop();
+
+    ~WorkerThread();
+
 private:
 
     void checkForMoreWork();
+
+    vector<long> * primeTimes;
 
 
     bool idle = false;

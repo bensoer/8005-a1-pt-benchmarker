@@ -19,9 +19,13 @@ private:
     queue<Task> tasks;
     pthread_mutex_t mu = PTHREAD_MUTEX_INITIALIZER;
 
+
+
 public:
     void addTask(Task task);
     Task getTask();
+
+    ~TaskManager();
 
 };
 
