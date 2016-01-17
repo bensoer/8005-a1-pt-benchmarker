@@ -122,6 +122,10 @@ void WorkerThread::start() {
         string message = to_string(threadid) + " has completed calculations in " + to_string(timeDifference) + "microsec";
         Logger::logToFile(message);
 
+        mpz_clear(tmp);
+        mpz_clear(d);
+        mpz_clear(n);
+
     }
 
 }

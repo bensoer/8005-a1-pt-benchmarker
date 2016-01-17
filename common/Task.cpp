@@ -18,3 +18,8 @@ Task::Task() {
     mpz_init(this->n);
     mpz_init(this->d);
 }
+
+Task::~Task() {
+    mpz_clear(this->n);
+    mpz_clear(this->d);
+}

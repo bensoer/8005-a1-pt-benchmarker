@@ -17,6 +17,7 @@ public:
     mpz_t d;
 
     Task();
+    ~Task();
 
 private:
 

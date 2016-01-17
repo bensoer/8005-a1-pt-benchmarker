@@ -153,11 +153,17 @@ void WorkerProcess::start() {
             string message = to_string(threadid) + " has completed calculations in " + to_string(timeDifference) + "microsec";
             Logger::logToFile(message);
 
+            mpz_clear(tmp);
+            mpz_clear(d);
+            mpz_clear(n);
+
         }else{
             cout << getpid() << " Received Message To Terminate. Terminating." << endl;
             break;
         }
     }
+
+
 }
 /**
  * stop function changes the state of the WorkerProcess so that it ccan no longer continue working. This value is checked
